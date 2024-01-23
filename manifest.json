@@ -1,15 +1,15 @@
 {
     "manifest_version": 4,
     "type": "extension",
-    "name": "插件模板",
-    "slug": "plugin_template",
-    "description": "LiteLoaderQQNT的插件模板",
-    "version": "0.1.0",
+    "name": "Animate动画插件",
+    "slug": "animate",
+    "description": "LiteLoaderQQNT的Animate动画插件",
+    "version": "1.0.0",
     "icon": "./icon.png",
     "authors": [
         {
-            "name": "LiteLoaderQQNT",
-            "link": "https://github.com/LiteLoaderQQNT"
+            "name": "Adoin",
+            "link": "https://github.com/adoin"
         }
     ],
     "platform": [
@@ -23,11 +23,11 @@
         "preload": "./src/preload.js"
     },
     "repository": {
-        "repo": "LiteLoaderQQNT/Plugin-Template",
+        "repo": "adoin/QQNT-animate",
         "branch": "main",
         "release": {
-            "tag": "0.1.0",
-            "file": "Plugin-Template.zip"
+            "tag": "1.0.0",
+            "file": "QQNT-animate.zip"
         }
     }
 }
