@@ -1,0 +1,49 @@
+<setting-section data-title="对话窗口" class="appearance">
+  <setting-panel>
+    <setting-list data-title="入场" data-direction="column">
+      <setting-item data-direction="row">
+        <setting-text>入场动画</setting-text>
+        <select style="width:50%;" class="q-button q-button--small q-button--secondary context-entrances"></select>
+      </setting-item>
+      <setting-item data-direction="row">
+        <setting-text>动画时间</setting-text>
+        <input type="range" value="1" min="0" max="5" step="0.1"
+               class="q-button q-button--small q-button--secondary pick-context-entrances-duration"
+               style="width: 50%;margin:unset;"
+               oninput="this.nextElementSibling.value = this.value"/>
+        <output style="position: absolute;right: 53%;margin: unset;">1</output>
+      </setting-item>
+    </setting-list>
+  </setting-panel>
+</setting-section>
+<div class="animate-divider"></div>
+<setting-section data-title="按钮" class="appearance">
+  <setting-panel>
+    <setting-list data-title="发送按钮高亮" data-direction="column">
+      <setting-item data-direction="row">
+        <setting-text>高亮动画</setting-text>
+        <select style="width:50%;" class="q-button q-button--small q-button--secondary send-highlight"></select>
+      </setting-item>
+      <setting-divider data-orientation="horizontal"></setting-divider>
+      <setting-item data-direction="row">
+        <setting-text>动画时间</setting-text>
+        <input type="range" value="1" min="0" max="5" step="0.1"
+               class="q-button q-button--small q-button--secondary pick-send-highlight-duration"
+               style="width: 50%;margin:unset;"
+               oninput="this.nextElementSibling.value = this.value"/>
+        <output style="position: absolute;right: 53%;margin: unset;">1</output>
+      </setting-item>
+    </setting-list>
+  </setting-panel>
+</setting-section>
+<style>
+  .liteloader.animate {
+    background-image:linear-gradient(50deg,#1890ff,#77e19d);
+    border-radius: 8px;
+  }
+  .animate-divider{
+    height: 1px;
+    background-color: #5f75e7;
+    margin: 4px 0;
+  }
+</style>
