@@ -143,11 +143,17 @@ const insertAnimateCss = () => {
   const animateCssLinkElement = document.createElement('link')
   animateCssLinkElement.rel = 'stylesheet'
   animateCssLinkElement.href = `local:///${plugin_path}/src/styles/animate.css`
+  document.head.appendChild(animateCssLinkElement)
   // 动态变量
   const dynamicCssLinkElement = document.createElement('link')
   dynamicCssLinkElement.rel = 'stylesheet'
-  dynamicCssLinkElement.href = `local:///${plugin_path}/src/styles/animate.css`
+  dynamicCssLinkElement.href = `local:///${plugin_path}/src/styles/dynamic.css`
   document.head.appendChild(dynamicCssLinkElement)
+  // 补丁
+  const patchCssLinkElement = document.createElement('link')
+  patchCssLinkElement.rel = 'stylesheet'
+  patchCssLinkElement.href = `local:///${plugin_path}/src/styles/patch.css`
+  document.head.appendChild(patchCssLinkElement)
 }
 try {
   // 页面加载完成时触发
