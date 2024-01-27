@@ -5,7 +5,12 @@ const pluginDataPath = LiteLoader.plugins['animate'].path.data
 const settingsPath = path.join(pluginDataPath, 'animate_settings.json')
 
 const csspath = path.join(__dirname, 'src/styles/dynamic.css')
-
+const passLog = (webcontents,args) => {
+  webcontents.send(
+    'LiteLoader.animate.log',
+    ...args
+  )
+}
 const log = (...args) => {
   const window = BrowserWindow.getFocusedWindow()
   window.console.log(`[animate]`, ...args)
@@ -34,13 +39,16 @@ const updateStyle = (webContents, settingsPath) => {
   const config = getConfig()
   fs.readFile(csspath, 'utf-8', (err, data) => {
     if (err) {
+      throw err
       return
     }
     /* todo 不同的选择器 不同的var*/
     let preloadString = `
-        div.two-col-layout__main {
-          --animate-duration: ${config.contextEntrancesDuration || 1}s;
-        }
+        /*待扩展：动态全局默认css变量实现比如按钮得无事件的动画*/
+        .send-btn-wrap:has(.sendable)｛
+          --animate-duration: ${config.sendHighlightDuration}s;
+          --animate-type: ${config.sendHighlightType};
+        ｝
         `
     fs.writeFileSync(csspath, preloadString, 'utf-8')
   })

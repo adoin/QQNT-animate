@@ -107,7 +107,10 @@ const chatEnterCmd = [
   'nodeIKernelGroupListener/onGroupBulletinChange',
   'nodeIKernelGroupListener/onGroupAllInfoChange'
 ]
-
+const pageLog = (msg)=>{
+  console.log('[animate]',...msg)
+}
+animate.BIND_EVENT('LiteLoader.animate.log',pageLog)
 function observeElement (selector, callback, interval = 100) {
   const timer = setInterval(function () {
     const element = document.querySelector(selector)
@@ -198,12 +201,7 @@ try {
     if (chatEnterCmd.includes(args?.[2]?.[0]?.cmdName)) {
       handleChatEnter(config)
     } else if ('onActivityChange' === args?.[2]?.[0]?.cmdName) {
-      const payload = args?.[2]?.[0]?.payload
-      if (payload) {
-        handleWindowShow(config)
-      } else {
-        handleWindowMinimize(config)
-      }
+     /*窗口弹出和最小化，然而效果不好*/
     }
   })
   
